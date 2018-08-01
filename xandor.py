@@ -21,18 +21,19 @@ def find_procs_by_name(name):
     
     
 def find_proc_with_most_memory():
+    max_perc, max_proc = None, None
     for p in psutil.process_iter():
-    
         try:
-                name_ = p.name()
-                cmdline = p.cmdline()
-                exe = p.exe()
-            except (psutil.AccessDenied, psutil.ZombieProcess):
-                pass
-            except psutil.NoSuchProcess:
-                continue
+            perc = p.memory_percent()
+            if perc > max_perc:
+                max_proc = p
+                max_perc = perc
+        except (psutil.AccessDenied, psutil.ZombieProcess):
+            pass
+        except psutil.NoSuchProcess:
+            continue
 
-    return max(psutil.process_iter(), key=psutil.Process.memory_percent)
+    return max_proc
 
     
 def get_current_memory():
