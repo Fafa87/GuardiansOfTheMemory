@@ -9,17 +9,22 @@ if not xandor.is_root():
     exit(0)
 
 
-def draox_sentry():
+def draox_sentry(angry):
     mem, sw = xandor.get_current_memory()
-    if mem["taken"] > 95:
+    # do not kill if angry (so only one is killed)
+    if mem["taken"] > 95 and not angry:
         big = xandor.find_proc_with_most_memory()
         print("There is too much memory taken... ", mem["taken"])
         print(big.name(), "is misbehaving... die! die! die!")
         big.kill()
+        return True
+
+    return mem["taken"] > 95
 
 
 print("Draox starts to defend...")
 
-while (True):
-    draox_sentry()
+angry = False
+while True:
+    angry = draox_sentry(angry)
     time.sleep(0.5)
