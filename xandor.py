@@ -1,5 +1,6 @@
 import ctypes
 import os
+import sys
 
 import elevate
 import psutil
@@ -15,6 +16,10 @@ def is_root():
 
 def elevate_me():
     elevate.elevate()
+
+
+def has_debugger():
+    return sys.gettrace() is not None
 
 
 def find_procs_by_name(name):

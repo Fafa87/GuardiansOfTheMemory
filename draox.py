@@ -4,7 +4,7 @@ import time
 
 import xandor
 
-if not xandor.is_root():
+if not xandor.is_root() and not xandor.has_debugger():
     xandor.elevate_me()
     exit(0)
 

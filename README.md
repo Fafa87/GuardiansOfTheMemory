@@ -6,8 +6,11 @@ Guardians of the memory stand between you and very dark and grim times, where li
 ## Why?
 
 - protection against the danger when working with huge data / objects
-- when out of memory and paging is on everything freezes and commonly reset is necessary
-- it is general solution to any source of memory usage overload
+- it is a general solution to any source of memory usage overload (e.g python, ImageJ)
+- paging can allow to allocate more memory than physically available by saving
+previously allocated data on disc
+- however when more memory is actively used that phisically available and paging is on
+everything freezes and commonly reset is necessary
 - more musing on it [link]
 
 ## What?
