@@ -24,5 +24,7 @@ You can check if it stops our sample offenders, just run `draox.py` and then run
 After a few minutes I wanted to go back to it but could not find ImageJ anywhere. That's when I noticed Draox smile at me.
 Thanks for saving me!" - Richard Bubblegum
 
+- "I had to run code 3 times then run it with debugger to notice that it stops because Draox is continously terminating it!
+Still I was saved every time!" - Bill Kickass
 
 ![image](https://user-images.githubusercontent.com/9865688/43545780-159bd1da-95d7-11e8-9dcc-4db86dbe9420.png)
