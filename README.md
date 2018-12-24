@@ -17,7 +17,14 @@ everything freezes and commonly reset is necessary
 
 - `draox.py` - the first protector: crude, not sophisticated but does the work
 
+## Where?
+
+- Windows 8.1 (developed, tested)
+- Linux (in theory but no one yet dared)
+
 ## Tests?
+
+Make sure that you save any progress that you made anywhere - if unsucessfull it may cause a freeze.
 
 You can check if it stops our sample offenders, just run `draox.py` and then run one of them.
 

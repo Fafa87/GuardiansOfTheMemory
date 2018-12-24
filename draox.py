@@ -4,27 +4,41 @@ import time
 
 import xandor
 
-if not xandor.is_root() and not xandor.has_debugger():
-    xandor.elevate_me()
-    exit(0)
+THRESHOLD = 93
+
+
+def roar():
+    print('\a')
+    time.sleep(0.5)
+    print('\a')
+    time.sleep(1)
 
 
 def draox_sentry(angry):
     mem, sw = xandor.get_current_memory()
     # do not kill if angry (so only one is killed)
-    if mem["taken"] > 95 and not angry:
+    if mem["taken"] > THRESHOLD and not angry:
         big = xandor.find_proc_with_most_memory()
         print("There is too much memory taken... ", mem["taken"])
         print(big.name(), "is misbehaving... die! die! die!")
         big.kill()
+        roar()
+        print("calming down...")
+        time.sleep(2)
+        print("... ready to go")
         return True
 
-    return mem["taken"] > 95
+    return mem["taken"] > THRESHOLD
 
 
-print("Draox starts to defend...")
+if __name__ == "__main__":
+    if not xandor.is_root() and not xandor.has_debugger():
+        xandor.elevate_me()
+        exit(0)
 
-angry = False
-while True:
-    angry = draox_sentry(angry)
-    time.sleep(0.5)
+    print("Draox starts to defend...")
+
+    angry = False
+    while True:
+        angry = draox_sentry(angry)
+        time.sleep(0.5)
