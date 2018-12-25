@@ -22,7 +22,7 @@ setuptools.setup(
     packages=setuptools.find_packages(),
     setup_requires=[],
     url="https://github.com/Fafa87/GuardiansOfTheMemory",
-    version="1.0"
+    version="1.0.2"
 )
 
 

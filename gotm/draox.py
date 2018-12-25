@@ -2,7 +2,7 @@ from __future__ import print_function
 
 import time
 
-import xandor
+import gotm.xandor
 
 THRESHOLD = 93
 
