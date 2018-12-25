@@ -19,6 +19,7 @@ setuptools.setup(
     long_description="Guardians of the memory stand between you and very dark and grim times, where life is lost, despair spreads like a disease and basically you have to redo all unsaved work.",
     name="gotm",
     description=("Guardians of the Memory defend Windows against its many foes, including imageio.volread()."),
+    packages=setuptools.find_packages(),
     setup_requires=[],
     url="https://github.com/Fafa87/GuardiansOfTheMemory",
     version="1.0"
