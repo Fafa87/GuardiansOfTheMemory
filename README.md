@@ -14,7 +14,8 @@ everything freezes and commonly reset is necessary
 
 ## What?
 
-- `draox.py` - the first protector: crude, not sophisticated but does the work
+- `pip install gotm`
+- `python -m gotm.draox` - the first protector: crude, not sophisticated but does the work
 
 ## Where?
 
