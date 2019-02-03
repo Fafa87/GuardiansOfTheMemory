@@ -42,7 +42,7 @@ def find_procs_by_name(name):
 
 
 def find_proc_with_most_memory():
-    max_perc, max_proc = None, None
+    max_perc, max_proc = 0, None
     for p in psutil.process_iter():
         try:
             perc = p.memory_percent()
